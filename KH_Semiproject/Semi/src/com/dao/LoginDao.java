@@ -145,7 +145,7 @@ public class LoginDao extends SqlMapConfig {
 	
 	
 	//sns login token check
-	public int tokenchk(String sns_token) {
+	public int tokenchk(String mem_email) {
 		
 		SqlSession session = null; 
 		//LoginDto dto = new LoginDto();
@@ -153,8 +153,11 @@ public class LoginDao extends SqlMapConfig {
 		
 		try {
 			
-			session = getSqlSessionFactory().openSession(true);
-			res = session.selectOne("loginmapper.tokenchk",sns_token);
+			session = getSqlSessionFactory().openSession(false);
+			res = session.selectOne("loginmapper.tokenchk",mem_email);
+			if(res>0) {
+				session.commit();
+			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();

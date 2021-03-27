@@ -83,8 +83,8 @@
   
   <select id="tokenchk" resultType="int" parameterType="String" >
   SELECT COUNT(*)
-  FROM SNSLOGIN
-  WHERE SNS_TOKEN = #{sns_token}
+  FROM LOGINBOARD
+  WHERE MEM_EMAIL = #{mem_email}
   
   
   </select>

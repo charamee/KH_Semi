@@ -40,8 +40,8 @@ public class LoginBiz {
 
 	}
 	
-	public int tokenchk(String sns_token) {
-		return dao.tokenchk(sns_token);
+	public int tokenchk(String mem_email) {
+		return dao.tokenchk(mem_email);
 	}
 
 }

@@ -17,10 +17,17 @@
 
 </head>
 <body>
-	<% String token = (String) session.getAttribute("token"); %>
-	<script type="text/javascript">
-		console.log(<%=token %>);
-	</script>
+<% 
+
+String email = session.getAttribute("email")+""; 
+System.out.println(email);
+
+
+
+%>
+	
+	
+	
 	<%@ include file="Form/header.jsp"%>
 	<!-- 바디부분 시작 -->
 	<div class="mt-4">
